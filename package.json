@@ -8,7 +8,14 @@
     "serve": "webpack-dev-server --open",
     "build": "webpack",
     "api": "json-server --watch api/db.json --port 9001",
-    "start": "concurrently --kill-others \"npm run api\" \"npm run serve\""
+    "start": "concurrently --kill-others \"npm run api\" \"npm run serve\"",
+    "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.ts'",
+    "docs": "node_modules/.bin/compodoc -p tsconfig.json -d docs",
+    "serve-docs": "node_modules/.bin/compodoc -s -d docs",
+    "commitmsg": "validate-commit-msg",
+    "cz": "git cz",
+    "precommit": "npm run lint",
+    "prepush": "npm run test --watch=false"
   },
   "repository": {
     "type": "git",
@@ -32,8 +39,13 @@
     "babel-preset-angular2": "0.0.2",
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
+    "codelyzer": "~4.0.1",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.7",
+    "@compodoc/compodoc": "^1.0.0-beta.14",
+    "@ngrx/store-devtools": "^4.0.0",
+    "conventional-changelog": "^1.1.6",
+    "cz-conventional-changelog": "^2.0.0",
     "html-webpack-plugin": "^2.30.1",
     "install": "^0.10.2",
     "jasmine-core": "^2.8.0",
@@ -43,6 +55,7 @@
     "karma-jasmine": "^1.1.1",
     "karma-mocha-reporter": "^2.2.5",
     "karma-webpack": "^2.0.6",
+    "husky": "^0.14.3",
     "node-sass": "^4.7.2",
     "npm": "^5.5.1",
     "postcss-loader": "^2.0.9",
@@ -50,9 +63,11 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.2.0",
+    "tslint": "~5.8.0",
     "typescript": "^2.6.2",
     "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack-dev-server": "^2.9.5",
+    "validate-commit-msg": "^2.12.2"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -74,5 +89,10 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
