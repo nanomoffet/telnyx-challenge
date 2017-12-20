@@ -4,9 +4,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app',
+  selector: 'tnx-app',
   template: `
-    <navigation></navigation>
+    <tnx-navigation></tnx-navigation>
 
     <div class='px-3'>
       <router-outlet></router-outlet>

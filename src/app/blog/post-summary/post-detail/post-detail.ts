@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 
-import template from './blog.html';
+import template from './post-detail.html';
 import {PostsService} from './posts.service';
 import {Post} from './store/models/post.model';
 
 @Component({
-    selector: 'tnx-blog',
+    selector: 'tnx-post-detail',
     template
 })
 
-export class BlogComponent implements OnInit {
+export class PostDetailComponent implements OnInit {
 
     posts: [Post];
 

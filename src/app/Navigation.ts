@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import template from './navigation.html';
 
 @Component({
-  selector: 'navigation',
+  selector: 'tnx-navigation',
   template,
 })
 export class NavigationComponent {}

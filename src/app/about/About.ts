@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 import template from './about.html';
 
 @Component({
-  selector: 'about',
+  selector: 'tnx-about',
   template,
 })
 export class AboutComponent {}
