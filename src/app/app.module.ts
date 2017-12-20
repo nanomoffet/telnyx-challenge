@@ -6,21 +6,21 @@ import {AppComponent} from './app.component';
 import {NavigationComponent} from './Navigation';
 import AboutComponent from './about';
 import HomeComponent from './home';
-import {BlogComponent} from './blog/Blog';
 import {CoreModule} from './core/core.module';
 import {PageNotFoundComponent} from './404/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
+import {BlogModule} from './blog/blog.module';
 
 @NgModule({
     imports: [
         CoreModule,
+        BlogModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         NavigationComponent,
         AboutComponent,
-        BlogComponent,
         HomeComponent,
         PageNotFoundComponent
     ],

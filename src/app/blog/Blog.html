@@ -1,11 +1,3 @@
 <h1>Blog</h1>
 
-<ul>
-    <li *ngFor="let post of posts">
-        title: {{post.title}},
-        author: {{post.title}},
-        published: {{post.publish_date}},
-        {{slug}}
-        {{description}}
-    </li>
-</ul>
+<tnx-post-summary *ngFor="let post of posts" [post]="post"></tnx-post-summary>

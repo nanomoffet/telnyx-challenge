@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import template from './post-summary.html';
+import {Post} from '../store/models/post.model';
 
 @Component({
     selector: 'tnx-post-summary',
@@ -9,6 +10,7 @@ import template from './post-summary.html';
 
 export class PostSummaryComponent implements OnInit {
 
+    @Input() post: Post;
 
     constructor() {}
 
