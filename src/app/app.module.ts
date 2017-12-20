@@ -1,38 +1,20 @@
 /// <reference path='../../declarations.d.ts'/>
 
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './Navigation';
 import AboutComponent from './about';
 import HomeComponent from './home';
 import {BlogComponent} from './blog/Blog';
-
-const routing = RouterModule.forRoot([
-    {
-        path: 'about',
-        component: AboutComponent
-    },
-    {
-      path: 'blog',
-      component: BlogComponent
-    },
-    {
-        path: 'home',
-        component: HomeComponent
-    }, {
-        path: '**',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
-]);
+import {CoreModule} from './core/core.module';
+import {PageNotFoundComponent} from './404/not-found.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
     imports: [
-        BrowserModule,
-        routing,
+        CoreModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
@@ -40,6 +22,7 @@ const routing = RouterModule.forRoot([
         AboutComponent,
         BlogComponent,
         HomeComponent,
+        PageNotFoundComponent
     ],
     bootstrap: [AppComponent]
 })
