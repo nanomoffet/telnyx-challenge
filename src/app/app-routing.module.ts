@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './404/not-found.component';
-import {BlogComponent} from './blog/Blog';
 import {AboutComponent} from './about/About';
 import {HomeComponent} from './home/Home';
+import {BlogComponent} from './blog/Blog';
 
 const appRoutes: Routes = [
     {path: 'about', component: AboutComponent},
