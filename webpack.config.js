@@ -57,6 +57,10 @@ const config = {
           {
             loader: 'ts-loader',
           },
+            {
+              loader: 'angular-router-loader',
+            }
+
         ]
       },
 
