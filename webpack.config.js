@@ -106,6 +106,10 @@ const config = {
           },
         ]
       },
+        {
+            test: /\.svg$/,
+            loader: 'file-loader'
+        },
 
       // CSS files will be injected into index.html as a `<style>` tag.
       {

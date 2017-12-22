@@ -1,0 +1,25 @@
+<div class="post-detail-container">
+    <div class="paper">
+        <div class="lines">
+            <div class="text" contenteditable spellcheck="false">
+                <h2>{{post.title}}</h2>
+                <h4>by {{post.author}}</h4>
+                <h4>published on {{post.publish_date}}</h4>
+                <div [innerHTML]="post.content"></div>
+
+                <hr>
+
+                <div class="comment" *ngFor="let comment of comments">
+                    <span>{{comment.user}}</span>
+                    <span>{{comment.date}}</span>
+                    <p>{{comment.content}}</p>
+                </div>
+                <a class="reply" (click)="addComment()">Add Comment</a>
+            </div>
+        </div>
+        <!--<div class="holes hole-top"></div>-->
+        <!--<div class="holes hole-middle"></div>-->
+        <!--<div class="holes hole-bottom"></div>-->
+    </div>
+</div>
+<tnx-comment-modal *ngIf="openCommentModal" [post]="post" [numberOfComments]="comments.length" (closeModal)="closeModal()"></tnx-comment-modal>

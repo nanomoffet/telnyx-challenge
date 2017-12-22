@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import {HttpClient} from '@angular/common/http';
-import {Post} from './store/models/post.model';
-import {Comment} from './store/models/comment.model';
+import {Comment} from '../../blog/store/models/comment.model';
 
 @Injectable()
 export class CommentsService {
@@ -13,11 +12,12 @@ export class CommentsService {
     constructor (private http: HttpClient) {}
 
 
-    getBlogPostComments(id: number): Observable<Post> {
-        return this.http.get<Post>(this.baseUrl + `/posts/${id}/comments`)
+    getBlogPostComments(id: number): Observable<Comment[]> {
+        return this.http.get<[Comment]>(this.baseUrl + `/posts/${id}/comments`)
     }
 
-    postBlogPostComment(id: number, comment: Comment): Observable<Response> {
+    postBlogPostComment(id: number, comment: Comment) {
+        console.log(comment);
         return this.http.post<Response>(this.baseUrl + `/posts/${id}/comments`, comment)
     }
 

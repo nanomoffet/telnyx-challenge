@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import {HttpClient} from '@angular/common/http';
-import {Post} from './store/models/post.model';
+import {Post} from '../../blog/store/models/post.model';
 
 @Injectable()
 export class PostsService {

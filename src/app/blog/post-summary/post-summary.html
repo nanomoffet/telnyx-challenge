@@ -1,5 +1,9 @@
-title: {{post.title}},
-author: {{post.title}},
-published: {{post.publish_date}},
-{{post.slug}}
-{{post.description}}
+<div class="note">
+    <a routerLink="/blog/{{post.id}}">
+        <h2>{{post.title}}</h2>
+        <p>by {{post.author}}</p>
+        <p>published on {{post.publish_date}}</p>
+        <p>{{post.description}}</p>
+    </a>
+</div>
+
